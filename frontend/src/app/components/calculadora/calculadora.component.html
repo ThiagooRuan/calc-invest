@@ -1,0 +1,58 @@
+<div class="calculadora-container" style="max-width: 800px; margin: 0 auto; font-family: sans-serif; padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; box-sizing: border-box;">
+  
+  <h2>Calculadora de Juros Compostos</h2>
+  
+  <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+    
+    <div>
+      <label>Capital Inicial (R$):</label>
+      <input type="number" [(ngModel)]="dadosForm.capital_inicial" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+    </div>
+
+    <div>
+      <label>Aporte Mensal (R$):</label>
+      <input type="number" [(ngModel)]="dadosForm.aporte_mensal" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+    </div>
+    
+    <div>
+        <label>Tipo de Taxa:</label>
+        <select [(ngModel)]="dadosForm.tipo_taxa" style="width: 100%; padding: 8px; margin-top: 5px; height: 35px; background: white; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            <option value="mensal">Mensal (% ao mês)</option>
+            <option value="anual">Anual (% ao ano)</option>
+        </select>
+    </div>
+
+    <div>
+      <label>Taxa de Juros (%):</label>
+      <input type="number" [(ngModel)]="dadosForm.taxa_juros" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+    </div>
+
+    <div>
+        <label>Tipo Período:</label>
+        <select [(ngModel)]="dadosForm.tipo_periodo" style="width: 100%; padding: 8px; margin-top: 5px; height: 35px; background: white; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            <option value="meses">Mensal</option>
+            <option value="anos">Anual</option>
+        </select>
+    </div>
+
+    <div>
+      <label>Período (Tempo):</label>
+      <input type="number" [(ngModel)]="dadosForm.periodo" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+    </div>
+
+  </div>
+
+  <button (click)="enviarCalculo()" style="width: 100%; padding: 12px; background-color: #10b981; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-bottom: 5px; transition: background 0.2s;">
+    Calcular Evolução
+  </button>
+
+  <div *ngIf="calculado">
+    <hr style="margin-top: 25px; margin-bottom: 25px; border: 0; border-top: 1px solid #eee;">
+
+    <h3>Evolução Patrimonial</h3>
+    <div style="position: relative; width: 100%; height: 350px;">
+      <canvas id="graficoEvolucao"></canvas>
+    </div>
+  </div>
+
+</div>

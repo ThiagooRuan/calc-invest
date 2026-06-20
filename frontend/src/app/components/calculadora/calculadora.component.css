@@ -1,0 +1,17 @@
+/* Cria uma seção que ocupa 100% da altura da tela visível */
+:host {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  min-height: 100vh;       /* Garante que pega a altura total da tela */
+  background-color: #f8fafc; /* Um fundo cinza bem claro para destacar o card */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ajustes finos no card da calculadora para combinar com a centralização */
+.calculadora-container {
+  background: white;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Sombra elegante */
+}
