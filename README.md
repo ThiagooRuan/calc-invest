@@ -53,3 +53,9 @@ A forma mais rápida de rodar a aplicação completa na sua máquina é utilizan
 ```
 docker compose up --build
 ````
+
+Pronto! Após o término da compilação, acesse os serviços no seu navegador:
+
+Front-end (Angular): http://localhost:4200
+Back-end (FastAPI): http://localhost:8000
+Documentação da API (Swagger): http://localhost:8000/docs
