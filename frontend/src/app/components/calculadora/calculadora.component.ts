@@ -109,7 +109,7 @@ export class CalculadoraComponent implements OnInit, OnDestroy{
           y: {
             beginAtZero: true,
             ticks: {
-              callback: (value) => 'R$ ' + Number(value).toLocaleString('pt-BR')
+              callback: (value: any) => 'R$ ' + Number(value).toLocaleString('pt-BR')
             }
           }
         }
